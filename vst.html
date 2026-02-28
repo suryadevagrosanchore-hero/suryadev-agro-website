@@ -86,8 +86,23 @@ footer{
     background: #0D1B2A;
     padding:20px;
     text-align:center;
+} 
+
+@media(max-width:768px){
+
+.card{
+    width:90%;
+    display:block;
+    margin:20px auto;
 }
 
+section div[style*="display:flex"]{
+    flex-direction:column;
+    text-align:center;
+    gap:15px;
+}
+
+}
 </style>
 </head>
 
@@ -104,6 +119,7 @@ color:white;
 display:flex;
 align-items:center;
 justify-content:space-between;
+flex-wrap:wrap;
 max-width:1200px;
 margin:auto;
 ">
@@ -1104,7 +1120,8 @@ flex-wrap:wrap;
 <!-- Service Form -->
 <div style="
 background:#f2f2f2;
-width:500px;
+width:100%;
+max-width:500px;
 padding:25px;
 border-radius:25px;
 box-shadow:0 20px 40px rgba(0,0,0,0.5);
@@ -1132,7 +1149,8 @@ style="border-radius:15px;">
 <!-- Test Drive Form -->
 <div style="
 background:#f2f2f2;
-width:500px;
+width:100%;
+max-width:500px;
 padding:25px;
 border-radius:25px;
 box-shadow:0 20px 40px rgba(0,0,0,0.5);
@@ -1162,8 +1180,18 @@ style="border-radius:15px;">
 
 <footer>
 <p>📍 Suryadev Agro, भीनमाल हॉस्पिटल के पास,SH 16 गुडामालानी रोड बगोड़ा, जालोर (राज.) </p>
-<p>📞 Mobile: 9828652639; 8233652639</p>
-<p>📧 Email: suryadevagrosanchore@email.com</p>
+<p>
+📞 Mobile: 
+<a href="tel:9828652639" style="color:white; text-decoration:none;">9828652639</a> ; 
+<a href="tel:8233652639" style="color:white; text-decoration:none;">8233652639</a>
+</p>
+<p>
+📧 Email: 
+<a href="mailto:suryadevagrosanchore@gmail.com" 
+   style="color:white; text-decoration:none;">
+   suryadevagrosanchore@gmail.com
+</a>
+</p>
 <p>© 2024 Suryadev Agro. All Rights Reserved.</p>
 </footer>
 
@@ -1180,4 +1208,5 @@ function toggleDetail(id) {
 </script>
 
 </body>
+
 </html>
