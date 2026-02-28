@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Suryadev Agro - Tractor Agency</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Yatra+One&display=swap" rel="stylesheet">
+
+<style>
+body {
+    margin:0;
+    font-family: 'Yatra One', cursive;
+    background: linear-gradient(to right, #0f3d0f, #1e6b1e);
+    color:rgb(255, 255, 255);
+}
+
+header {
+    padding:20px;
+    text-align:center;
+    background:#002b00;
+}
+
+nav a {
+    color:white;
+    margin:15px;
+    text-decoration:none;
+    font-size:18px;
+}
+
+.hero {
+    text-align:center;
+    padding:100px 20px;
+}
+
+.btn {
+    background:orange;
+    padding:12px 25px;
+    color:white;
+    border:none;
+    cursor:pointer;
+    font-size:18px;
+    border-radius:5px;
+}
+
+.section {
+    padding:60px 20px;
+    text-align:center;
+    background:white;
+    color:black;
+}
+
+.card-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.card {
+  width: 300px;
+  padding: 20px;
+  box-shadow: 0 0 10px gray;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.card button {
+  background: linear-gradient(to right, #ff6600, #ff9900);
+  padding: 10px 30px;
+  border-radius: 30px;
+  color: white;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+}
+
+.highlight-title {
+  display: block;
+  width: fit-content;
+  margin: 0 auto 40px auto;
+  background: linear-gradient(to right, #ff6600, #ff9900);
+  padding: 10px 30px;
+  border-radius: 30px;
+  color: white;
+  font-weight: bold;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+  text-align: center;
+}
+
+/* ===== ABOUT SECTION 2 COLUMN LAYOUT ===== */
+
+.about-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    margin-top: 40px;
+}
+
+.about-text {
+    flex: 1;
+    text-align: left;
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.about-slider {
+    flex: 1;
+    position: relative;
+    max-width: 500px;
+}
+
+.about-slider img {
+    width: 100%;
+    display: none;
+    border-radius: 10px;
+}
+
+.about-slider img.active {
+    display: block;
+}
+
+/* ===== MOBILE RESPONSIVE ===== */
+
+@media (max-width: 768px) {
+    .about-container {
+        flex-direction: column;
+    }
+
+    .about-text {
+        text-align: center;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>Suryadev Agro</h1>
+<nav>
+<a href="#about">About Us</a>
+<a href="#products">Products</a>
+<a href="#service">Service</a>
+<a href="#contact">Contact</a>
+</nav>
+</header>
+
+<section class="hero">
+<h2>आपका भरोसेमंद ट्रैक्टर साथी</h2>
+<p>Indo Farm & VST Tractor की अधिकृत डीलरशिप</p>
+<button class="btn" onclick="location.href='#products'">मॉडल देखें</button>
+</section>
+
+<section id="products" class="section">
+<h2 class="highlight-title">हमारे ब्रांड</h2>
+<div class="card-container">
+  <div class="card">
+    <img src="images/indofarm.jpg" alt="Indo Farm Tractor">
+    <h3>Indo Farm</h3>
+    <button class="btn" onclick="location.href='indofarm.html'">विवरण देखें</button>
+  </div>
+
+  <div class="card">
+    <img src="images/vst.jpg" alt="vst Tractor">
+    <h3>VST Tractor</h3>
+    <button class="btn" onclick="location.href='vst.html'">विवरण देखें</button>
+  </div>
+</div>
+
+</section>
+
+<section id="about" class="section">
+<h2 class="highlight-title">हमारे बारे में</h2>
+
+<div class="about-container">
+
+    <!-- LEFT SIDE TEXT -->
+    <div class="about-text">
+        <p>
+        Suryadev Agro केवल एक ट्रैक्टर एजेंसी नहीं, बल्कि किसानों का सच्चा साथी है। 
+        हमारा विश्वास है कि खेत में पसीना बहाने वाला हर किसान सर्वोत्तम मशीनरी का हकदार है।
+        </p>
+
+        <p>
+        इसी सोच के साथ हम Indo Farm और VST Tractor जैसे भरोसेमंद ब्रांड के 
+        आधुनिक और शक्तिशाली ट्रैक्टर उपलब्ध कराते हैं। 
+        हमारी प्राथमिकता है – गुणवत्ता, सेवा और दीर्घकालीन विश्वास।
+        </p>
+
+        <p>
+        आपकी उन्नति ही हमारी सफलता है।
+        </p>
+    </div>
+
+    <!-- RIGHT SIDE SLIDER -->
+    <div class="about-slider">
+        <img class="slide active" src="images/tractor1.jpg">
+        <img class="slide" src="images/tractor2.jpg">
+        <img class="slide" src="images/tractor3.jpg">
+        <img class="slide" src="images/tractor4.jpg">
+        <img class="slide" src="images/tractor5.jpg">
+        <img class="slide" src="images/tractor6.jpg">
+    </div>
+
+</div>
+
+</section>
+
+<section id="service" class="section">
+<h2 class="highlight-title">हमारी सेवाएं</h2>
+
+<div class="card-container">
+
+<div class="card">
+<h3>🛠 नियमित सर्विस</h3>
+<p>
+ट्रैक्टर की समय-समय पर सर्विस, इंजन चेकअप और 
+पूरी तकनीकी जाँच की सुविधा उपलब्ध है।
+</p>
+</div>
+
+<div class="card">
+<h3>⚙️ जेन्युइन स्पेयर पार्ट्स उपलब्ध</h3>
+<p>
+Indo Farm और VST Tractor के 
+मूल (Genuine) स्पेयर पार्ट्स उपलब्ध हैं।
+</p>
+<ul style="text-align:left;">
+<li>Engine Parts</li>
+<li>Clutch Plate</li>
+<li>Brake Parts</li>
+<li>Hydraulic Parts</li>
+<li>Filters & Engine Oil</li>
+<li>Electrical Parts</li>
+</ul>
+</div>
+
+<div class="card">
+<h3>🚜 ऑन-साइट सर्विस</h3>
+<p>
+जरूरत पड़ने पर हमारी टीम खेत या घर तक 
+सर्विस प्रदान करती है।
+</p>
+</div>
+
+</div>
+
+</section>
+
+<section id="contact" class="section">
+<h2 class="highlight-title">Contact Us</h2>
+<p>📍 मनमोहन हॉस्पिटल के पास, NH 68 बारमेर रोड सांचोर, जालोर [राज]</p>
+<p>📍 भीनमाल हॉस्पिटल के पास, SH 16 गुडामालानी रोड बगोड़ा,जालोर [राज]</p>
+<p>📞 Mobile: 9828652639; 8233652639</p>
+<p>📧 Email: suryadevagrosanchore@email.com</p>
+<p>© 2024 Suryadev Agro. All Rights Reserved.</p>
+</section>
+
+<script>
+let slides = document.querySelectorAll(".about-slider .slide");
+let index = 0;
+
+function showSlide() {
+    slides.forEach(slide => slide.classList.remove("active"));
+    slides[index].classList.add("active");
+    index = (index + 1) % slides.length;
+}
+
+setInterval(showSlide, 3000);
+</script>
+
+</body>
+</html>
