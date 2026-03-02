@@ -156,6 +156,7 @@ nav a {
 <a href="#products">Products</a>
 <a href="#service">Service</a>
 <a href="#contact">Contact</a>
+<a href="#emi">EMI Calculator</a>   
 </nav>
 </header>
 
@@ -260,6 +261,49 @@ Indo Farm और VST Tractor के
 </div>
 
 </section>
+    
+<section id="emi" class="section">
+<h2 class="highlight-title">EMI Calculator</h2>
+
+<div style="max-width:900px;margin:auto;text-align:left;">
+
+<label>Loan Amount (₹)</label>
+<input type="number" id="loan" value="460000">
+
+<label>Interest Rate (% p.a.)</label>
+<input type="number" id="rate" value="17.48" step="0.01">
+
+<label>Tenure (Months)</label>
+<input type="number" id="months" value="60">
+
+<div style="background:#f3f3f3;padding:15px;border-radius:10px;margin-top:20px;">
+<p><strong>Monthly EMI:</strong> ₹ <span id="emiAmount"></span></p>
+<p><strong>3 Months Total:</strong> ₹ <span id="m3"></span></p>
+<p><strong>6 Months Total:</strong> ₹ <span id="m6"></span></p>
+<p><strong>12 Months Total:</strong> ₹ <span id="m12"></span></p>
+<p><strong>Total Interest:</strong> ₹ <span id="totalInterest"></span></p>
+<p><strong>Total Payment:</strong> ₹ <span id="totalPayment"></span></p>
+</div>
+
+<div style="overflow-x:auto;margin-top:25px;">
+<table style="width:100%;border-collapse:collapse;font-size:14px;">
+<thead style="background:#1e6b1e;color:white;">
+<tr>
+<th>Month</th>
+<th>EMI</th>
+<th>Principal</th>
+<th>Interest</th>
+<th>Balance</th>
+<th>Semi-Annual</th>
+</tr>
+</thead>
+<tbody id="emiTable"></tbody>
+</table>
+</div>
+
+</div>
+    
+</section>    
 
 <section id="contact" class="section">
 <h2 class="highlight-title">Contact Us</h2>
@@ -293,9 +337,68 @@ function showSlide() {
 setInterval(showSlide, 3000);
 </script>
 
+<script>
+
+function calculateEMI() {
+
+let P = parseFloat(document.getElementById("loan").value);
+let annualRate = parseFloat(document.getElementById("rate").value);
+let n = parseInt(document.getElementById("months").value);
+
+if (!P || !annualRate || !n) return;
+
+let r = annualRate / 12 / 100;
+
+let EMI = (P * r * Math.pow(1+r, n)) / (Math.pow(1+r, n) - 1);
+EMI = parseFloat(EMI);
+
+let totalPayment = EMI * n;
+let totalInterest = totalPayment - P;
+
+document.getElementById("emiAmount").innerText = EMI.toFixed(2);
+document.getElementById("m3").innerText = (EMI * 3).toFixed(2);
+document.getElementById("m6").innerText = (EMI * 6).toFixed(2);
+document.getElementById("m12").innerText = (EMI * 12).toFixed(2);
+document.getElementById("totalPayment").innerText = totalPayment.toFixed(2);
+document.getElementById("totalInterest").innerText = totalInterest.toFixed(2);
+
+let balance = P;
+let tableHTML = "";
+
+for (let i = 1; i <= n; i++) {
+
+let interest = balance * r;
+let principal = EMI - interest;
+balance -= principal;
+
+let semiAnnual = (i % 6 === 0) ? (EMI * 6).toFixed(2) : "-";
+
+tableHTML += `
+<tr>
+<td>${i}</td>
+<td>₹ ${EMI.toFixed(2)}</td>
+<td>₹ ${principal.toFixed(2)}</td>
+<td>₹ ${interest.toFixed(2)}</td>
+<td>₹ ${balance > 0 ? balance.toFixed(2) : "0.00"}</td>
+<td>${semiAnnual}</td>
+</tr>
+`;
+}
+
+document.getElementById("emiTable").innerHTML = tableHTML;
+}
+
+document.getElementById("loan").addEventListener("input", calculateEMI);
+document.getElementById("rate").addEventListener("input", calculateEMI);
+document.getElementById("months").addEventListener("input", calculateEMI);
+
+calculateEMI();
+
+</script>    
 </body>
 
 </html>
+
 
 
 
