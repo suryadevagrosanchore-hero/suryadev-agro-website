@@ -141,7 +141,36 @@ nav a {
     .about-text {
         text-align: center;
     }
+    /* ===== EMI TABLE STYLING ===== */
 
+.emi-table-wrapper {
+    overflow-x: auto;
+    margin-top: 25px;
+}
+
+.emi-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 700px;
+    font-size: 14px;
+}
+
+.emi-table th {
+    background: #1e6b1e;
+    color: white;
+    border: 1px solid #ccc;
+    padding: 8px;
+}
+
+.emi-table td {
+    border: 1px solid #ccc;
+    padding: 8px;
+    text-align: center;
+}
+
+.emi-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
 }
     
 </style>
@@ -286,15 +315,15 @@ Indo Farm और VST Tractor के
 </div>
 
 <div style="overflow-x:auto;margin-top:25px;">
-<table style="width:100%;border-collapse:collapse;font-size:14px;">
+<table style="width:100%;border-collapse:collapse;font-size:14px;min-width:650px;">
 <thead style="background:#1e6b1e;color:white;">
 <tr>
-<th>Month</th>
-<th>EMI</th>
-<th>Principal</th>
-<th>Interest</th>
-<th>Balance</th>
-<th>Semi-Annual</th>
+<th style="border:1px solid #ccc;padding:8px;">Month</th>
+<th style="border:1px solid #ccc;padding:8px;">EMI</th>
+<th style="border:1px solid #ccc;padding:8px;">Principal</th>
+<th style="border:1px solid #ccc;padding:8px;">Interest</th>
+<th style="border:1px solid #ccc;padding:8px;">Balance</th>
+<th style="border:1px solid #ccc;padding:8px;">Semi-Annual</th>
 </tr>
 </thead>
 <tbody id="emiTable"></tbody>
@@ -375,12 +404,12 @@ let semiAnnual = (i % 6 === 0) ? (EMI * 6).toFixed(2) : "-";
 
 tableHTML += `
 <tr>
-<td>${i}</td>
-<td>₹ ${EMI.toFixed(2)}</td>
-<td>₹ ${principal.toFixed(2)}</td>
-<td>₹ ${interest.toFixed(2)}</td>
-<td>₹ ${balance > 0 ? balance.toFixed(2) : "0.00"}</td>
-<td>${semiAnnual}</td>
+<td style="border:1px solid #ccc;padding:8px;text-align:center;">${i}</td>
+<td style="border:1px solid #ccc;padding:8px;text-align:center;">₹ ${EMI.toFixed(2)}</td>
+<td style="border:1px solid #ccc;padding:8px;text-align:center;">₹ ${principal.toFixed(2)}</td>
+<td style="border:1px solid #ccc;padding:8px;text-align:center;">₹ ${interest.toFixed(2)}</td>
+<td style="border:1px solid #ccc;padding:8px;text-align:center;">₹ ${balance > 0 ? balance.toFixed(2) : "0.00"}</td>
+<td style="border:1px solid #ccc;padding:8px;text-align:center;">${semiAnnual}</td>
 </tr>
 `;
 }
@@ -398,6 +427,7 @@ calculateEMI();
 </body>
 
 </html>
+
 
 
 
