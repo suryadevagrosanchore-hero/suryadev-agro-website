@@ -230,7 +230,7 @@ HP: 20<br>
 
 <br>
 
-<button class="btn" onclick="window.open('https://wa.me/918233652639')">
+<button class="btn" onclick="sendWhatsApp('Indo Farm 1020 DI Tractor')">
 WhatsApp Inquiry
 </button>
 
@@ -320,7 +320,7 @@ PTO पावर: 21.8 PS<br>
 
 <br>
 
-<button class="btn" onclick="window.open('https://wa.me/918233652639')">
+<button class="btn" onclick="sendWhatsApp('Indo Farm 1026 Tractor')">
 WhatsApp Inquiry
 </button>
 
@@ -408,7 +408,7 @@ Price on Request – ऑफर और फाइनेंस के अनुस�
 
 <br>
 
-<button class="btn" onclick="window.open('https://wa.me/918233652639')">
+<button class="btn" onclick="sendWhatsApp('Indo Farm 2030 DI Tractor')">
 WhatsApp Inquiry
 </button>
 
@@ -500,7 +500,7 @@ Price on Request – फाइनेंस और एरिया के अन�
 
 <br>
 
-<button class="btn" onclick="window.open('https://wa.me/918233652639')">
+<button class="btn" onclick="sendWhatsApp('Indo Farm 2035 DI Tractor')">
 WhatsApp Inquiry
 </button>
 
@@ -593,7 +593,7 @@ Price on Request – फाइनेंस और एरिया के अन�
 
 <br>
 
-<button class="btn" onclick="window.open('https://wa.me/918233652639')">
+<button class="btn" onclick="sendWhatsApp('Indo Farm 2042 DI Tractor')">
 WhatsApp Inquiry
 </button>
 
@@ -690,7 +690,7 @@ Price on Request – फाइनेंस, एक्सचेंज और ए�
 
 <br>
 
-<button class="btn" onclick="window.open('https://wa.me/918233652639')">
+<button class="btn" onclick="sendWhatsApp('Indo Farm 3035 DI Tractor')">
 WhatsApp Inquiry
 </button>
 
@@ -795,7 +795,7 @@ Price on Request – फाइनेंस और एरिया के अन�
 
 <br>
 
-<button class="btn" onclick="window.open('https://wa.me/918233652639')">
+<button class="btn" onclick="sendWhatsApp('Indo Farm 3040 DI Tractor')">
 WhatsApp Inquiry
 </button>
 
@@ -916,7 +916,7 @@ Price on Request<br>
 
 <br>
 
-<button class="btn" onclick="window.open('https://wa.me/918233652639')">
+<button class="btn" onclick="sendWhatsApp('Indo Farm 3048 DI Tractor')">
 WhatsApp Inquiry
 </button>
 
@@ -999,7 +999,7 @@ Price on Request
 
 <br>
 
-<button class="btn" onclick="window.open('https://wa.me/918233652639')">
+<button class="btn" onclick="sendWhatsApp('Indo Farm 3055 NV Tractor')">
 WhatsApp Inquiry
 </button>
 
@@ -1082,7 +1082,7 @@ Price on Request
 
 <br>
 
-<button class="btn" onclick="window.open('https://wa.me/918233652639')">
+<button class="btn" onclick="sendWhatsApp('Indo Farm 3055 DI HT Tractor')">
 WhatsApp Inquiry
 </button>
 
@@ -1197,6 +1197,23 @@ function toggleDetail(id){
     x.style.display = "none";
   }
 }
+  <script>
+function toggleDetail(id){
+  var x = document.getElementById(id);
+  if(x.style.display === "none"){
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+
+// ✅ NEW FUNCTION
+function sendWhatsApp(modelName){
+  var number = "918233652639"; // apna number
+  var message = "Hello, I am interested in " + modelName + ". Please share details.";
+  var url = "https://wa.me/" + number + "?text=" + encodeURIComponent(message);
+  window.open(url, "_blank");
+}  
 </script>
 </body>
 
