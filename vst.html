@@ -252,7 +252,7 @@ Price on Request – फाइनेंस और एरिया के अन�
 
 <br>
 
-<button class="btn" onclick="window.open('https://wa.me/918233652639')">
+<button class="btn" onclick="sendWhatsApp('VST 180D Tractor')">
 WhatsApp Inquiry
 </button>
 
@@ -348,10 +348,9 @@ Price on Request – फाइनेंस और एरिया के अन�
 
 <br>
 
-<button class="btn" onclick="window.open('https://wa.me/918233652639')">
+<button class="btn" onclick="sendWhatsApp('VST MT 225 Tractor')">
 WhatsApp Inquiry
 </button>
-
 </div>
 </div>
 
@@ -450,7 +449,7 @@ Price on Request – फाइनेंस और एरिया के अन�
 
 <br>
 
-<button class="btn" onclick="window.open('https://wa.me/918233652639')">
+<button class="btn" onclick="sendWhatsApp('VST MT 270 Tractor')">
 WhatsApp Inquiry
 </button>
 
@@ -553,7 +552,7 @@ Price on Request – फाइनेंस और एरिया के अन�
 
 <br>
 
-<button class="btn" onclick="window.open('https://wa.me/918233652639')">
+<button class="btn" onclick="sendWhatsApp('VST 918 DI Tractor')">
 WhatsApp Inquiry
 </button>
 
@@ -658,7 +657,7 @@ Price on Request – फाइनेंस और एरिया के अन�
 
 <br>
 
-<button class="btn" onclick="window.open('https://wa.me/918233652639')">
+<button class="btn" onclick="sendWhatsApp('VST 922 DI Tractor')">
 WhatsApp Inquiry
 </button>
 
@@ -765,7 +764,7 @@ Price on Request – फाइनेंस और एरिया के अन�
 
 <br>
 
-<button class="btn" onclick="window.open('https://wa.me/918233652639')">
+<button class="btn" onclick="sendWhatsApp('VST 927DI Tractor')">
 WhatsApp Inquiry
 </button>
 
@@ -872,7 +871,7 @@ Price on Request – फाइनेंस और एरिया के अन�
 
 <br>
 
-<button class="btn" onclick="window.open('https://wa.me/918233652639')">
+<button class="btn" onclick="sendWhatsApp('VST 929DI Tractor')">
 WhatsApp Inquiry
 </button>
 
@@ -981,7 +980,7 @@ Price on Request – फाइनेंस और एरिया के अन�
 
 <br>
 
-<button class="btn" onclick="window.open('https://wa.me/918233652639')">
+<button class="btn" onclick="sendWhatsApp('VST 932DI Tractor')">
 WhatsApp Inquiry
 </button>
 
@@ -991,7 +990,7 @@ WhatsApp Inquiry
 <div class="card">
 <img src="images/vst-939di.jpg" alt="VST 939D1 Tractor">
 
-<h3>VST 939D1 – 36 HP 4WD Tractor</h3>
+<h3>VST 939DI – 36 HP 4WD Tractor</h3>
 
 <p>
 HP: 36 (26.84 kW)<br>
@@ -1093,7 +1092,7 @@ Price on Request – फाइनेंस और एरिया के अन�
 
 <br>
 
-<button class="btn" onclick="window.open('https://wa.me/918233652639')">
+<button class="btn" onclick="sendWhatsApp('VST 939DI Tractor')">
 WhatsApp Inquiry
 </button>
 
@@ -1204,6 +1203,26 @@ function toggleDetail(id) {
     } else {
         x.style.display = "none";
     }
+}
+function toggleDetail(id) {
+    var x = document.getElementById(id);
+
+    if (x.style.display === "none" || x.style.display === "") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
+    }
+}
+
+// ✅ WhatsApp message function
+function sendWhatsApp(modelName) {
+    var number = "918233652639";
+
+    var message = "Hello Suryadev Agro,%0A" +
+                  "I am interested in " + modelName + "%0A" +
+                  "Please share details.";
+
+    window.open("https://wa.me/" + number + "?text=" + message, "_blank");
 }
 </script>
 
